@@ -11,10 +11,11 @@ def home():
     color = random.choice(["red", "yellow", "blue"])
 
     panels = [
-        {"title": "Netflix", "url": "https://www.bbc.com/news"},
-        {"title": "Youtube", "url": "youtube.com"},
-        {"title": "Goodreads", "url": "goodreads.com"},
-        {"title": "Duolingo", "url": "https://www.bbc.com/news"}
+        {"title": "Goodreads", "url": "https://www.goodreads.com/"},
+        {"title": "LinkedIn", "url": "https://www.linkedin.com/"},
+        {"title": "Duolingo", "url": "https://www.duolingo.com/learn"},
+        {"title": "Medium", "url": "https://medium.com/"},
+        {"title": "It's Nice That", "url": "https://www.itsnicethat.com/"}
     ]
 
     return render_template("home.html", color=color, panels=panels)
