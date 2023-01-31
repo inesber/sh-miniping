@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 import random
 
 app = Flask(__name__)
@@ -25,8 +26,10 @@ def about():
 
 @app.route("/ping")
 def ping():
+    url = request.args.get("url")
+
     return {
-        "url": "https://www.netflix.com/browse",
+        "url": url,
         "code": "200",
         "speed": 400
     }
