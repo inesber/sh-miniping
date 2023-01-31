@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 import random
+import time
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ def home():
         {"title": "Netflix", "url": "netflix.com"},
         {"title": "Youtube", "url": "youtube.com"},
         {"title": "Goodreads", "url": "goodreads.com"},
-        {"title": "Duolingo", "url": "duolingo.com"}
+        {"title": "Duolingo", "url": "https://duolingo.com"}
     ]
 
     return render_template("home.html", color=color, panels=panels)
@@ -28,8 +29,14 @@ def about():
 def ping():
     url = request.args.get("url")
 
+    start_time = time.time()
+    r = requests.get(url)
+    end_time = time.time()
+
+    diff_time = int((end_time - start_time) * 1000)
+
     return {
         "url": url,
-        "code": "200",
-        "speed": 400
+        "code": r.status_code,
+        "speed": diff_time
     }
