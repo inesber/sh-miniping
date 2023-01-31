@@ -1,8 +1,7 @@
-<nav>
-    <a href="{{ url_for("home") }}">Home</a>
-    <a href="{{ url_for("about") }}">About</a>
-</nav>
+{% extends "layout.html" %}
 
-<h1>Hello</h1>
+{% block content %}
+    <h1>Hello</h1>
 
-<p>The color is... {{color}}</p>
+    <p>The color is... {{color}}</p>
+{% endblock %}
