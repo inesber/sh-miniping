@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini Ping</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
   </head>
   <body>
     <header>
@@ -20,15 +20,9 @@
       {% block content %}
       {% endblock %}
 
-      <div class="page">
-        <h2>Test page</h2>
-        <p class="url">https://api.superhi.com</p>
-        <output>Measuring</output>
-      </div>
-
     </section>
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{{ url_for("static", filename="script.js") }}></script>
   </body>
 </html>
